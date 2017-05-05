@@ -8,7 +8,7 @@ rm(list = ls())
 setwd("~/Data Science Projects/dog-adoption")
 
 # Load data
-load("dog_df.RData")
+load("data/dog_df.RData")
 
 # Load libraries
 library(rvest)
@@ -65,5 +65,8 @@ if (length(dog_id) != 0) {
   
   # Merge New Data Frame
   dog_df <- cbind(dog_df, new_dog_df)
+  
+  # Save Data Frame
+  save(dog_df, file = "data/dog_df.RData")
 }
 
